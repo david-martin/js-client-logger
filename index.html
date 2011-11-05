@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="logger.js"></script>
+  </head>
+
+  <body>
+    <script>
+      loggerLevel = 3; // highest
+      logger.log('1 test log', ' ', 'message 1');
+      logger.log('2 test log message 2');
+      logger.debug('3 te', 'st debug mes', 'sage');
+      logger.info('4 test info message');
+      logger.warn('5 test warn ', 'message');
+      logger.error('6 test ', 'error message');
+
+      loggerLevel = 2;
+      logger.log('7 ok');
+      logger.debug('SHOULD NOT SEE THIS!!!');
+      logger.info('8 ok');
+      logger.warn('9 ok');
+      logger.error('10 ok');
+
+      loggerLevel = 1;
+      logger.log('11 ok');
+      logger.debug('SHOULD NOT SEE THIS!!!');
+      logger.info('SHOULD NOT SEE THIS!!!');
+      logger.warn('12 ok');
+      logger.error('13 ok');
+
+      loggerLevel = 0;
+      logger.log('14 ok');
+      logger.debug('SHOULD NOT SEE THIS!!!');
+      logger.info('SHOULD NOT SEE THIS!!!');
+      logger.warn('SHOULD NOT SEE THIS!!!');
+      logger.error('15 ok');
+
+      loggerLevel = 3;
+      logger.log('16 ok');
+      logger.debug('17 ok');
+      logger.info('18 ok');
+      logger.warn('19 ok');
+      logger.error('20 ok');
+
+      loggerEnabled = false;
+      logger.log('SHOULD NOT SEE THIS!!!');
+      logger.debug('SHOULD NOT SEE THIS!!!');
+      logger.info('SHOULD NOT SEE THIS!!!');
+      logger.warn('SHOULD NOT SEE THIS!!!');
+      logger.error('SHOULD NOT SEE THIS!!!');
+
+      loggerEnabled = true;
+      logger.log('21 ok');
+      logger.debug('22 ok');
+      logger.info('23 ok');
+      logger.warn('24 ok');
+      logger.error('25 ok');
+    </script>
+  </body>
+</html>
