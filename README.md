@@ -33,7 +33,7 @@ Multiple strings and/or vars can be passed in as arguments, which automatically 
 ```javascript
 var test = 'debugged';
 logger.debug('this is a ', test, ' value');
-// => Nov-15-2011-23:08:25 (ERROR) >>> this is a debugged value
+// => Nov-15-2011-23:08:25 (DEBUG) >>> this is a debugged value
 ```
 
 ## Disable logging
