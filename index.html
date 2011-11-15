@@ -6,55 +6,49 @@
 
   <body>
     <script>
-      loggerLevel = 3; // highest
-      logger.log('1 test log', ' ', 'message 1');
-      logger.log('2 test log message 2');
+      logger.level = 3; // highest
+      logger.debug('1 test log', ' ', 'message 1');
+      logger.debug('2 test log message 2');
       logger.debug('3 te', 'st debug mes', 'sage');
       logger.info('4 test info message');
       logger.warn('5 test warn ', 'message');
       logger.error('6 test ', 'error message');
 
-      loggerLevel = 2;
-      logger.log('7 ok');
+      logger.level = 2;
       logger.debug('SHOULD NOT SEE THIS!!!');
-      logger.info('8 ok');
-      logger.warn('9 ok');
-      logger.error('10 ok');
+      logger.info('7 ok');
+      logger.warn('8 ok');
+      logger.error('9 ok');
 
-      loggerLevel = 1;
-      logger.log('11 ok');
+      logger.level = 1;
       logger.debug('SHOULD NOT SEE THIS!!!');
       logger.info('SHOULD NOT SEE THIS!!!');
-      logger.warn('12 ok');
-      logger.error('13 ok');
+      logger.warn('10 ok');
+      logger.error('11 ok');
 
-      loggerLevel = 0;
-      logger.log('14 ok');
+      logger.level = 0;
       logger.debug('SHOULD NOT SEE THIS!!!');
       logger.info('SHOULD NOT SEE THIS!!!');
       logger.warn('SHOULD NOT SEE THIS!!!');
-      logger.error('15 ok');
+      logger.error('12 ok');
 
-      loggerLevel = 3;
-      logger.log('16 ok');
-      logger.debug('17 ok');
-      logger.info('18 ok');
-      logger.warn('19 ok');
-      logger.error('20 ok');
+      logger.level = 3;
+      logger.debug('13 ok');
+      logger.info('14 ok');
+      logger.warn('15 ok');
+      logger.error('16 ok');
 
-      loggerEnabled = false;
-      logger.log('SHOULD NOT SEE THIS!!!');
+      logger.enabled = false;
       logger.debug('SHOULD NOT SEE THIS!!!');
       logger.info('SHOULD NOT SEE THIS!!!');
       logger.warn('SHOULD NOT SEE THIS!!!');
       logger.error('SHOULD NOT SEE THIS!!!');
 
-      loggerEnabled = true;
-      logger.log('21 ok');
-      logger.debug('22 ok');
-      logger.info('23 ok');
-      logger.warn('24 ok');
-      logger.error('25 ok');
+      logger.enabled = true;
+      logger.debug('17 ok');
+      logger.info('18 ok');
+      logger.warn('19 ok');
+      logger.error('20 ok');
     </script>
   </body>
 </html>

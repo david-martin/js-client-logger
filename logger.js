@@ -1,18 +1,16 @@
 /*global console
 */
-var loggerEnabled = true;
-var loggerLevel = 3;
 var logger = {
+  enabled: true,
+  level: 3,
   output: function (action, msgs) {
-    if (loggerEnabled && 'undefined' !== typeof console) {
+    if (logger.enabled && 'undefined' !== typeof console) {
       msgs = Array.prototype.slice.call(msgs);
       if (msgs && msgs.length > 0) {
-        var msg;
-
-        msg = new Date().toString() + ' (' + action + ') >> ' + msgs.join('');
-        if ('log' === action || loggerLevel >= logger[action + 'Level']) {
-          if ('undefined' !== typeof console[action]) {
-            console[action](msg);
+        var msg = new Date().toString().split(' ').splice(1, 4).join('-') + ' (' + action + ') >>> ' + msgs.join('');
+        if (logger.level >= logger[action]) {
+          if ('undefined' !== typeof console[action.toLowerCase()]) {
+            console[action.toLowerCase()](msg);
           } else {
             console.log(msg);
           }
@@ -21,27 +19,23 @@ var logger = {
     }
   },
 
-  debugLevel: 3,
+  DEBUG: 3,
   debug: function () {
-    logger.output('debug', arguments);  
+    logger.output('DEBUG', arguments);  
   },
 
-  infoLevel: 2,
+  INFO: 2,
   info: function () {
-    logger.output('info', arguments);
+    logger.output('INFO', arguments);
   },
 
-  warnLevel: 1,
+  WARN: 1,
   warn: function () {
-    logger.output('warn', arguments);
+    logger.output('WARN', arguments);
   },
 
-  errorLevel: 0,
+  ERROR: 0,
   error: function () {
-    logger.output('error', arguments);
-  },
-
-  log: function () { // no level i.e. always logged if logging enabled
-    logger.output('log', arguments);
+    logger.output('ERROR', arguments);
   }
 };
