@@ -1,13 +1,13 @@
 Client side (Browser) javascript logger. Makes a global javascript variable available, 'logger', which provides a variety of safe logging functions e.g. logger.debug(), logger.error(). They all use the browsers console to output log information, and fail gracefully in the event of no console object being available.
 
-There are 4 levels of logging: debug, info, warn and error. Where available, these will use
+There are 4 levels of logging: debug, info, warn and error. Where available, these will use the browsers built in console level functions e.g. console.debug(), console.error()
 
 # Installation
 
 In your html, add the following script before your code
 
 ```html
-<script src="logger.js"></script>
+<script type="text/javascript" src="logger.js"></script>
 ```
 
 # Usage
@@ -24,11 +24,12 @@ logger.info('another value');
 logger.warn('a warning log message');
 // => Nov-15-2011-23:08:25 (WARN) >>> a warning log message
 
-logger.error('something seriouse went wrong');
-// => Nov-15-2011-23:08:25 (ERROR) >>> something seriouse went wrong
+logger.error('something serious went wrong');
+// => Nov-15-2011-23:08:25 (ERROR) >>> something serious went wrong
 ```
 
 Multiple strings and/or vars can be passed in as arguments, which automatically get concatenated.
+
 ```javascript
 var test = 'debugged';
 logger.debug('this is a ', test, ' value');
